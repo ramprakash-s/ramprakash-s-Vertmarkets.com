@@ -1,0 +1,6 @@
+﻿{
+  "MagezineStore": {
+    "BaseUrl": "http://magazinestore.azurewebsites.net",
+    "TimeOutInSeconds": 30
+  }
+}
