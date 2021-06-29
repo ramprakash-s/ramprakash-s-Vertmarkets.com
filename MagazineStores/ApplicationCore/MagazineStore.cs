@@ -38,7 +38,11 @@ namespace MagazineStores.Business
             var subscribers = await _magazineStoreService.GetSubscribers();
             var magazineTasks = new List<Task<List<Magazine>>>();
 
-            categories.ForEach(category => magazineTasks.Add(_magazineStoreService.GetMagazines(category)));
+            foreach(var category in categories)
+            {
+                magazineTasks.Add(_magazineStoreService.GetMagazines(category));
+            }
+            //categories.ForEach(category => magazineTasks.Add(_magazineStoreService.GetMagazines(category)));
 
             Task.WaitAll(magazineTasks.ToArray());
 
